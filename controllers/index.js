@@ -1,1 +1,9 @@
-//this is the index.js file (i needed to add something to push it to gitHUb)
+const router = require('express').Router();
+
+const apiRoutes = require('./api');
+const homeRoutes = require('./home-routes.js');
+
+router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
+
+module.exports = router;
