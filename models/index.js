@@ -1,13 +1,21 @@
 const User = require('./User');
-const Location = require('./Location');
+const City = require('./City');
 const Event = require('./Event');
 
-Gallery.hasMany(Painting, {
-  foreignKey: 'gallery_id',
+User.hasMany(City, {
+  foreignKey: 'user_id',
 });
 
-Painting.belongsTo(Gallery, {
-  foreignKey: 'gallery_id',
+City.belongsTo(User, {
+  foreignKey: 'user_id',
 });
+
+City.hasMany(Event, {
+    foreignKey: 'city_name'
+  });
+  
+  Event.belongsTo(City, {
+    foreignKey: 'city_name',
+  });
 
 module.exports = { User, Location, Event };
