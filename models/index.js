@@ -18,4 +18,4 @@ City.hasMany(Event, {
     foreignKey: 'city_name',
   });
 
-module.exports = { User, Location, Event };
+module.exports = { User, City, Event };
