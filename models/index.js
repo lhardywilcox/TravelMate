@@ -11,11 +11,11 @@ City.belongsTo(User, {
 });
 
 City.hasMany(Event, {
-    foreignKey: 'city_name'
+    foreignKey: 'city_id'
   });
   
   Event.belongsTo(City, {
-    foreignKey: 'city_name',
+    foreignKey: 'city_id',
   });
 
 module.exports = { User, City, Event };

@@ -13,10 +13,7 @@ router.get('/:city', async (req, res) => {
     }).then (data => {
         console.log(data);
         res.status(200).send(data);
-
     })
-    // res.status(200).json(data);
-
     }
     catch(err) {
         console.log(err);
