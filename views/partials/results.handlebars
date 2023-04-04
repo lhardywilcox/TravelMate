@@ -1,0 +1,17 @@
+<section class="events">
+    <img src="{{_embedded.events.images[0].url}}" alt="Photo of {{_embedded.events.name}}.">
+    <div class="event-details">
+        <h3>{{_embedded.events.name}}</h3>
+        <p>Date: {{_embedded.events.start.localDate}}</p>
+        <p>Description: {{_embedded.events.classification[0].genre.name}}</p>
+        <p>Venue:{{_embedded.events._embedded.venues[0].name}}</p>
+        <p>City:{{_embedded.events._embedded.venues[0].city.name}},
+            {{_embedded.events._embedded.venues[0].state.stateCode}}</p>
+        <a href="{{_embedded.events.url}}">Click here for more information!</a>
+    </div>
+</section>
+
+
+{{!-- This displays in cards. Do we want to display in cards, or in a table format?
+Is this the results of the API call, or the data returned from the database?
+Do we want the user to be able to select from a list, and save only the selected events? --}}
