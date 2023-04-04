@@ -12,10 +12,11 @@ router.get('/:city', async (req, res) => {
             return response.json()
         }).then(data => {
             console.log(data);
-            res.render('results', { data });
-
+            let resultData = data._embedded.events;
+            res.render('results', { resultData });
+            //res.status(200).json(data._embedded.events);
         })
-        // res.status(200).json(data);
+
 
     }
     catch (err) {
