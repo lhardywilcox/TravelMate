@@ -1,12 +1,12 @@
 {{!-- {{#if loggedIn}} --}}
-<section class="container">
+<section class="saved-cities">
   {{!-- <h3 class="username">{{user.username}}'s Trips</h3> --}}
 
-  <section class="flex-row justify-center">
+  <section class="saved-each-city">
     {{#each cities as |city|}}
 
-    <h2 class="city-name">{{ city.name}}</h2>
-    <img src="{{cities.image}}" />
+    <h2 class="saved-city-name"><a href='/api/saved/city/{{city.id}}'>{{city.name}}</a></h2>
+    <img src="{{city.image}}" />
     {{/each}}
   </section>
 </section>

@@ -1,0 +1,13 @@
+.saved-cities {
+    display: flex;
+    justify-content: center;
+}
+
+.saved-each-city {
+    width: 50%;
+    height: 600px;
+    background-color: bisque;
+}
+.saved-each-city img {
+    object-fit: cover;
+}
