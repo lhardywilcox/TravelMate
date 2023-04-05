@@ -45,11 +45,23 @@ router.get('/', async (req, res) => {
     });
 
     const city = dbCityData.get({ plain: true });
-    res.render('savedEachCity', { city });
+    res.render('userEachCity', { city });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
+router.get('/event/:id', async (req, res) => {
+  try {
+const dbEventData = await Event.findByPk(req.params.id, {
+});
+
+const event = dbEventData.get({ plain: true });
+res.render('userEvent', { event });
+} catch (err) {
+console.log(err);
+res.status(500).json(err);
+}
+});
   module.exports = router;
