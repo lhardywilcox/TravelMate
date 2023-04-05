@@ -12,6 +12,8 @@ router.get('/:city', async (req, res) => {
             return response.json()
         }).then(data => {
             console.log(data);
+            // put a for loop in here to loop through ten events by index, change result data to add .i?
+
             let resultData = data._embedded.events;
             res.render('results', { resultData });
             //res.status(200).json(data._embedded.events);
