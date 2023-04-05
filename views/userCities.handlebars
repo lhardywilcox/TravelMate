@@ -4,9 +4,10 @@
 
   <section class="saved-each-city">
     {{#each cities as |city|}}
-
-    <h2 class="saved-city-name"><a href='/api/saved/city/{{city.id}}'>{{city.name}}</a></h2>
-    <img src="{{city.image}}" />
+    <a href='/api/saved/city/{{city.id}}'>
+      <h2 class="saved-city-name">{{city.name}}</h2>
+      <img src="{{city.image}}" />
+    </a>
     {{/each}}
   </section>
 </section>
