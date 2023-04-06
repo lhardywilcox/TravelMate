@@ -1,18 +1,16 @@
+{{#each resultData as |event|}}
 <section class="events">
-    <img src="{{resultData.0.images.0.url}}" alt="Photo of {{resultData.0.name}}.">
+    <img src="{{event.images.0.url}}" alt="Photo of {{event.name}}.">
     <div class="event-details">
-        <h3>{{resultData.0.name}}</h3>
-        <p>Date: {{ resultData.0.dates.start.localDate}}</p>
-        <p>Description: {{ resultData.0.classification.1.genre.name}}</p>
-        <p>Venue: {{ resultData.0._embedded.venues.0.name}}</p>
-        <p>City: {{ resultData.0._embedded.venues.0.city.name}},
-            {{resultData.0._embedded.venues.0.state.stateCode}}</p>
-        <a href="{{resultData.0.url}}">Click here for more information!</a>
+        <h3>{{event.name}}</h3>
+        <p>Date: {{ event.dates.start.localDate}}</p>
+        <p>Description: {{ event.classification.genre.name}}</p>
+        <p>Venue: {{ event._embedded.venues.0.name}}</p>
+        <p>City: {{ event._embedded.venues.0.city.name}},
+            {{event._embedded.venues.0.state.stateCode}}</p>
+        <a href="{{event.url}}">Click here for more information!</a>
     </div>
 </section>
+{{/each}}
 
 {{!-- Need to get description to display properly --}}
-
-{{!-- This displays in cards. Do we want to display in cards, or in a table format?
-Is this the results of the API call, or the data returned from the database?
-Do we want the user to be able to select from a list, and save only the selected events? --}}
