@@ -8,14 +8,17 @@ router.get('/:city', async (req, res) => {
         const city = req.params.city;
         const dataUrl = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + process.env.API_KEY + "&city=" + city
 
-    fetch(dataUrl).then (response => {
-        return response.json()
-    }).then (data => {
-        console.log(data);
-        res.render('results', { data });
+        fetch(dataUrl).then(response => {
+            return response.json()
+        }).then(data => {
+            console.log(data);
 
-    })
-    // res.status(200).json(data);
+            let resultData = data._embedded.events;
+            console.log(resultData);
+            res.render('results', { resultData });
+            // res.status(200).json(data);
+        })
+
 
     }
     catch (err) {
