@@ -27,11 +27,11 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    ending_date: {
-      type: DataTypes.DATE,
+    price_range: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    genre: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -39,11 +39,11 @@ Event.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    city_name: {
-      type: DataTypes.STRING,
+    city_id: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'city',
-        key: 'name',
+        key: 'id',
       },
     },
   },

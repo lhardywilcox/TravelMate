@@ -1,31 +1,13 @@
-const { response } = require('express');
-
 const router = require('express').Router();
+const { User, City, Event } = require('../../models');
 
-router.get('/:city', async (req, res) => {
-    try {
-        // "https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey="+process.env.API_KEY+"&city="+city
-        const city = req.params.city;
-        const dataUrl = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + process.env.API_KEY + "&city=" + city
-
-        fetch(dataUrl).then(response => {
-            return response.json()
-        }).then(data => {
-            console.log(data);
-
-            /*  let resultData = data._embedded.events;
-             console.log(resultData);
-             res.render('results', { resultData }); */
-            res.status(200).json(data._embedded.events);
-        })
-
-
-    }
-    catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-
+router.post('/', async (req, res) => {
+    console.log(req.body);
+    const eventData = await Event.findOne({where:{URL:req.body.URL}});
+    console.log(eventData);
+    if(!eventData) {
+        Event.create({name:req.body.cityName, user_id: 1, image:req.body.image})
     }
 })
 
-module.exports = router;
+module.exports=router
