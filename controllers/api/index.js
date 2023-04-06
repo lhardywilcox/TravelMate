@@ -1,12 +1,9 @@
 const router = require('express').Router();
 
-const eventRoutes = require('./event');
 
-router.use('/events', eventRoutes);
+const savedRoutes = require('./city');
 
-const savedRoutes = require('./saved');
-
-router.use('/saved', savedRoutes);
+router.use('/city', savedRoutes);
 
 module.exports = router;
 

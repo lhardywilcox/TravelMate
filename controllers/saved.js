@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, City, Event } = require('../../models');
+const { User, City, Event } = require('../models');
 
 router.get('/', async (req, res) => {
     console.log(req.session);
@@ -39,12 +39,13 @@ router.get('/', async (req, res) => {
             'location',
             'city_id',
           ],
-          WHERE:{city_id:req.params.id}
+          // WHERE:{city_id:req.params.id}
         },
       ],
     });
 
     const city = dbCityData.get({ plain: true });
+    console.log(city)
     res.render('userEachCity', { city });
   } catch (err) {
     console.log(err);
