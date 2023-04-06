@@ -1,16 +1,19 @@
+{{#each resultData as |event|}}
 <section class="events">
-    {{!-- <img src="{{_embedded.events.images[0].url}}" alt="Photo of {{_embedded.events.name}}.">
-    <div class="event-details"> --}}
-        {{!-- <h3>{{_embedded.events.name}}</h3>
-        <p>Date: {{_embedded.events.start.localDate}}</p>
-        <p>Description: {{_embedded.events.classification[0].genre.name}}</p>
-        <p>Venue:{{_embedded.events._embedded.venues[0].name}}</p>
-        <p>City:{{_embedded.events._embedded.venues[0].city.name}},
-            {{_embedded.events._embedded.venues[0].state.stateCode}}</p>
-        <a href="{{_embedded.events.url}}">Click here for more information!</a> --}}
-        <button class="saveBtn" data-image="{{data._embedded.events.0.images.0.url}}" data-city="{{data._embedded.events.0._embedded.venues.0.city.name}}">Save</button>
+    <img src="{{event.images.0.url}}" alt="Photo of {{event.name}}.">
+    <div class="event-details">
+        <h3>{{event.name}}</h3>
+        <p>Date: {{ event.dates.start.localDate}}</p>
+        <p>Description: {{ event.classification.genre.name}}</p>
+        <p>Venue: {{ event._embedded.venues.0.name}}</p>
+        <p>City: {{ event._embedded.venues.0.city.name}},
+            {{event._embedded.venues.0.state.stateCode}}</p>
+        <a href="{{event.url}}">Click here for more information!</a>
+        <button class="saveBtn" data-image="{{event.images.0.url}}" data-city="{{event._embedded.venues.0.city.name}}">Save</button>
     </div>
 </section>
+{{/each}}
+
 
 <script src="/js/saveCity.js"></script>
 {{!-- This displays in cards. Do we want to display in cards, or in a table format?
