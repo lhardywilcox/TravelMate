@@ -4,7 +4,6 @@ const router = require('express').Router();
 
 router.get('/:city', async (req, res) => {
     try {
-        // "https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey="+process.env.API_KEY+"&city="+city
         const city = req.params.city;
         const dataUrl = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + process.env.API_KEY + "&city=" + city
 
@@ -16,7 +15,7 @@ router.get('/:city', async (req, res) => {
             let resultData = data._embedded.events;
             console.log(resultData);
             res.render('results', { resultData });
-            // res.status(200).json(data);
+            //res.status(200).json(data);
         })
 
 
