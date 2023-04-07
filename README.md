@@ -53,6 +53,8 @@ TravelMate was built as a collaboration between:
 
 The Ticketmaster Discovery API was used for the event information in TravelMate.
 
+Tailwinds.css was used for the styling.
+
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -62,6 +64,8 @@ The Ticketmaster Discovery API was used for the event information in TravelMate.
 For the full text of this license, please click on the link provided.
 
 ## Tests
+
+There were no tests developed for this application.
 
 ## Questions
 
