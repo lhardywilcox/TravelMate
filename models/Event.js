@@ -27,10 +27,10 @@ Event.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    price_range: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+    // price_range: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
     genre: {
       type: DataTypes.STRING,
       allowNull: false,
