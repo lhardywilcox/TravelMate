@@ -6,7 +6,8 @@ router.post('/', async (req, res) => {
     const eventData = await Event.findOne({where:{URL:req.body.URL}});
     console.log(eventData);
     if(!eventData) {
-        Event.create({name:req.body.cityName, user_id: 1, image:req.body.image})
+    const cityId = await City.fineOne({where:{name:req.body.city}})
+        Event.create({event_name:req.body.eventName, URL: req.body.url, image:req.body.image, starting_date:req.body.starting_date, genre:req.body.genre, location:req.body.location, city_id:cityId.id})
     }
 })
 

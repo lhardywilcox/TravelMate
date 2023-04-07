@@ -5,7 +5,7 @@
   <section class="saved-each-city">
     {{#each cities as |city|}}
     <a href='/saved/city/{{city.id}}'>
-      <h2 class="saved-city-name">{{city.name}}</h2>
+      <h2 class="saved-each-city">{{city.name}}</h2>
       <img src="{{city.image}}" />
     </a>
     {{/each}}
