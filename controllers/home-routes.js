@@ -22,4 +22,14 @@ router.get('/signup', (req, res) => {
     } */
   res.render('signup');
 });
+
+router.get('/search', (req, res) => {
+  // If a session exists, redirect the request to the homepage
+  /*   if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    } */
+  res.render('search');
+});
+
 module.exports = router;
