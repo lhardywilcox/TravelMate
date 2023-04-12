@@ -2,17 +2,24 @@ const router = require('express').Router();
 
 // route to get landing page
 router.get('/', async (req, res) => {
-    res.render('homepage');
+  res.render('homepage');
 });
 
 router.get('/login', (req, res) => {
-    // If a session exists, redirect the request to the homepage
+  // If a session exists, redirect the request to the homepage
   /*   if (req.session.logged_in) {
       res.redirect('/');
       return;
     } */
-  
-    res.render('login');
-  });
+  res.render('login');
+});
 
+router.get('/signup', (req, res) => {
+  // If a session exists, redirect the request to the homepage
+  /*   if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    } */
+  res.render('signup');
+});
 module.exports = router;
