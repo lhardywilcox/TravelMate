@@ -6,7 +6,7 @@ const loginFormHandler = async (event) => {
 
     if (email && password) {
         const response = await fetch('/api/users/login', {
-            
+
         })
     }
 }
