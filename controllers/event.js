@@ -15,15 +15,12 @@ router.get('/:city', async (req, res) => {
             let resultData = data._embedded.events;
             console.log(resultData);
             res.render('results', { resultData });
-            //res.status(200).json(data);
+            //res.status(200).json(data); Used this while working on getting the data pulled correctly from the api.
         })
-
-
     }
     catch (err) {
         console.log(err);
         res.status(500).json(err);
-
     }
 })
 

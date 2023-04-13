@@ -4,12 +4,13 @@ const { User } = require('../../models');
 // To create a new user //
 router.post('/signup', async (req, res) => {
     try {
+        console.log("hotdog!");
         const dbUserData = await User.create({
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
         });
-
+        console.log(dbUserData);
         req.session.save(() => {
             req.session.loggedIn = true;
             res.session.id = dbUserData.id
