@@ -33,9 +33,9 @@ User.init(
             allowNull: false,
             validate: {
                 len: [6],
-                isDecimal: true,          
-                isLowercase: true,        
-                isUppercase: true, 
+                //isDecimal: true,          
+                //isLowercase: true,        
+                //isUppercase: true, 
             },
         },
         profile_img_url: {
