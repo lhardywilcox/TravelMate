@@ -10,11 +10,12 @@ router.post('/signup', async (req, res) => {
             email: req.body.email,
             password: req.body.password,
         });
-        console.log(dbUserData);
+        const user = dbUserData.get({ plain: true });
+        console.log(user);
         req.session.save(() => {
             req.session.loggedIn = true;
-            res.session.id = dbUserData.id
-            res.status(200).json(dbUserData);
+            req.session.id = user.id
+            res.status(200).json(user);
         });
     } catch (err) {
         console.log(err);
@@ -49,7 +50,7 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
-            res.session.id = dbUserData.id;
+            req.session.id = dbUserData.id;
 
             res
                 .status(200)
