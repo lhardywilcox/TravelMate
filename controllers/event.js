@@ -2,6 +2,7 @@ const { response } = require('express');
 
 const router = require('express').Router();
 
+
 router.get('/:city', async (req, res) => {
     try {
         const city = req.params.city;

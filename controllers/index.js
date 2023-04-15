@@ -13,8 +13,8 @@ router.use('/saved', savedRoutes);
 
 const eventRoutes = require('./event');
 
-router.use('/events', eventRoutes);
-
+router.use('/event', eventRoutes);
+// changed events to event in 16
 module.exports = router;
 
 
