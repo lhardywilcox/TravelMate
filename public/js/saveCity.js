@@ -8,9 +8,8 @@ var saveBtn = document.querySelector('.saveBtn');
 
 saveBtn.addEventListener('click', function(event){
     saveCity(event);
-    saveEvent(event)
+    saveEvent(event);
     console.log('click');
-    // saveEvent(event);
   })
 
   const saveCity = async (event) => {

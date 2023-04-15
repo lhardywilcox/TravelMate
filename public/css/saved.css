@@ -1,10 +1,13 @@
-
-
-.saved-each-city, .saved-each-event, .arount-event{
+.saved-each-city,
+.saved-each-event,
+.arount-event {
     display: flex;
     justify-content: center;
 }
-.saved-each-city a, .saved-each-event a, .event{
+
+.saved-each-city a,
+.saved-each-event a,
+.event {
     width: 30%;
     /* height: 600px; */
     margin: 20px;
@@ -16,21 +19,25 @@
     align-items: center; */
 }
 
-.saved-each-city h2, .saved-event-name, .event h2{
+.saved-each-city h2,
+.saved-event-name,
+.event h2 {
     font-size: 300%;
 
 }
 
 
-.saved-each-city img, .saved-each-event img, .event img{
+.saved-each-city img,
+.saved-each-event img,
+.event img {
     object-fit: cover;
     height: 400px;
     border-radius: 0 0 5px 5px;
 }
 
-.saveBtn, .saved-cities, .saved-events, .arount-event{
+.saved-cities,
+.saved-events,
+.arount-event {
     position: absolute;
-    top:200px;
+    top: 200px;
 }
-
-
