@@ -2,28 +2,29 @@ const router = require('express').Router();
 const { User, City, Event } = require('../models');
 
 router.get('/', async (req, res) => {
-    console.log(req.session);
-    const userId = 1
-    try {
-      const dbCityData = await City.findAll({
-        WHERE:{user_id:userId}
-      });
+  console.log(req.session);
+  const userId = req.params.user_id;
+  // changed from 1 to my test login id, did not change city list with differnet ids.
+  try {
+    const dbCityData = await City.findAll({
+      WHERE: { user_id: userId }
+    });
 
-      const cities = dbCityData.map((city) =>
-        city.get({ plain: true })
-      );
+    const cities = dbCityData.map((city) =>
+      city.get({ plain: true })
+    );
 
-        console.log(cities);
-        res.render('userCities', {cities});
+    console.log(cities);
+    res.render('userCities', { cities });
 
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
-  router.get('/city/:id', async (req, res) => {
-      try {
+router.get('/city/:id', async (req, res) => {
+  try {
     const dbCityData = await City.findByPk(req.params.id, {
       include: [
         {
@@ -55,14 +56,14 @@ router.get('/', async (req, res) => {
 
 router.get('/event/:id', async (req, res) => {
   try {
-const dbEventData = await Event.findByPk(req.params.id, {
-});
+    const dbEventData = await Event.findByPk(req.params.id, {
+    });
 
-const event = dbEventData.get({ plain: true });
-res.render('userEvent', { event });
-} catch (err) {
-console.log(err);
-res.status(500).json(err);
-}
+    const event = dbEventData.get({ plain: true });
+    res.render('userEvent', { event });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
-  module.exports = router;
+module.exports = router;

@@ -1,4 +1,4 @@
-// Model this a little on the signup/login pages, check out the saveCity page, too.
+
 
 const searchHandler = async (event) => {
     event.preventDefault();
