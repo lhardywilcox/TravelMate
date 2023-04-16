@@ -1,4 +1,4 @@
-const User = require('./User');
+const User = require('./user');
 const City = require('./City');
 const Event = require('./Event');
 
@@ -11,11 +11,11 @@ City.belongsTo(User, {
 });
 
 City.hasMany(Event, {
-    foreignKey: 'city_id'
-  });
-  
-  Event.belongsTo(City, {
-    foreignKey: 'city_id',
-  });
+  foreignKey: 'city_id'
+});
+
+Event.belongsTo(City, {
+  foreignKey: 'city_id',
+});
 
 module.exports = { User, City, Event };
