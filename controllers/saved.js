@@ -3,7 +3,7 @@ const { User, City, Event } = require('../models');
 
 router.get('/', async (req, res) => {
   console.log(req.session);
-  const userId = req.params.user_id;
+  const userId = 1;
   // changed from 1 to my test login id, did not change city list with differnet ids.
   try {
     const dbCityData = await City.findAll({
@@ -25,6 +25,7 @@ router.get('/', async (req, res) => {
 
 router.get('/city/:id', async (req, res) => {
   try {
+    console.log('getting city info');
     const dbCityData = await City.findByPk(req.params.id, {
       include: [
         {
@@ -35,7 +36,7 @@ router.get('/city/:id', async (req, res) => {
             'URL',
             'image',
             'starting_date',
-            'price_range',
+            //'price_range',
             'genre',
             'location',
             'city_id',
@@ -56,6 +57,7 @@ router.get('/city/:id', async (req, res) => {
 
 router.get('/event/:id', async (req, res) => {
   try {
+    console.log('getting event info');
     const dbEventData = await Event.findByPk(req.params.id, {
     });
 
